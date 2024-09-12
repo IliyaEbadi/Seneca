@@ -1,0 +1,12 @@
+1-Yes, I can use the "for" iteration construct to validate the rating values entered by the user. The "for" loop is suitable for this task because it allows for initialization, condition-checking, and increment/decrement in a single line, making the code concise and easier to read. However, since validation typically involves repeatedly prompting the user until valid input is received, a "while" or "do-while" loop might be more appropriate as they explicitly handle repeated checks until a condition is met.
+
+2-I selected the switch statement to print the month. This is because a switch statement is more readable and efficient for handling multiple discrete values (like the months), as it clearly maps each possible value to a specific action. Using if-else constructs would be more verbose and less intuitive in this case.
+
+3-
+1-Readability: Using variables and macros makes the code more readable and self-explanatory. For example, defining MIN_YEAR and MAX_YEAR instead of hardcoding the numbers makes it clear that these values represent a range for valid years.
+
+
+2-Maintainability: If the constant values need to change, they can be updated in one place (the variable or macro definition) rather than finding and replacing every instance of the hardcoded number throughout the code. This reduces the risk of errors.
+
+
+3-Reusability: Variables and macros can be reused throughout the code, reducing redundancy. For instance, using JAN and DEC for the month range means we only define these values once and use them wherever needed, ensuring consistency.

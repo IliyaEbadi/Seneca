@@ -1,0 +1,36 @@
+Reflection
+
+1. Constants:
+
+GRAMS_IN_LBS: 1
+Characters:
+
+type1, type2, type3, cream1, cream2, cream3, prefType1, prefCream1: 8
+Integers:
+
+weight1, weight2, weight3, servings1: 4
+In total, 13 variables were created.
+
+Importance of Organizing Variables
+Organizing variables is important for:
+
+Readability, Maintainability, Efficiency
+
+2. (type1 == 'L') || (type1 == 'l');
+Relational:
+
+(type1 == 'L'): Checks if type1 is 'L'.
+(type1 == 'l'): Checks if type1 is 'l'.
+Logical:
+
+(type1 == 'L') || (type1 == 'l'): Combines the two relational expressions with a logical (||).
+
+This calculation checks if type1 is either 'L' (uppercase) or 'l' (lowercase) and assigns the result (1 if true, 0 if false) .
+
+3.Original: !(type1 == 'L' && cream1 == 'Y')
+
+This checks if type1 is not 'L' or cream1 is not 'Y'.
+Using DeMorgan’s Law: type1 != 'L' || cream1 != 'Y'
+
+This logically negates both conditions and combines them with OR.
+Both expressions are equivalent but the second one uses DeMorgan’s Law to simplify the negation.

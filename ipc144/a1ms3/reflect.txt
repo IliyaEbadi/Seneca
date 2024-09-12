@@ -1,0 +1,58 @@
+/*/////////////////////////////////////////////////////////////////////////
+                        Assignment 1 - Milestone 3
+Full Name  :Iliya Ebadi
+Student ID#:168935237
+Email      :tebadi@myseneca.ca
+Section    :IPC144NCC
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+
+String Handling with Library Functions:
+
+In Milestone 1, we manually determined the length of the input string using a loop:
+
+c
+Copy code
+length = 0;
+while (input[length] != '\0') {
+    length++;
+}
+This can be simplified with the strlen() function from the string library:
+
+c
+Copy code
+length = strlen(input);
+Similarly, when copying strings into arrays, we originally used a loop:
+
+c
+Copy code
+for (i = 0; i < length; i++) {
+    cString[i] = input[i];
+}
+This can be replaced with strncpy():
+
+c
+Copy code
+strncpy(cString, input, length);
+cString[length] = '\0'; // Ensure null-termination
+Using these standard library functions reduces manual coding, minimizes potential errors, and ensures null-termination. This approach simplifies the code, enhancing maintainability and readability.
+
+Comparing strcpy() and strncpy():
+
+The strcpy() and strncpy() functions both copy strings from one buffer to another, but they differ in safety and behavior. strcpy() copies the source string along with its null terminator but does not check the size of the destination buffer. This can lead to buffer overflows if the source string is longer than the destination buffer. In contrast, strncpy() limits the number of characters copied based on the provided size, protecting against buffer overflows. However, if the source string is longer than the specified size, strncpy() does not automatically null-terminate the destination string, so you need to handle null-termination manually:
+
+c
+Copy code
+strncpy(cString, input, num);
+cString[num - 1] = '\0'; // Ensure null-termination
+Thus, strncpy() is generally the safer choice when dealing with fixed-size buffers.
+
+Improving Sorting Efficiency:
+
+For sorting appointments, I initially implemented a bubble sort algorithm with the function void sortAppointments(struct Appointment appointments[], int max). The approach involved converting times to minutes for uniformity, performing the bubble sort, and then converting back to the original format.
+
+To enhance performance, especially with larger datasets, alternative sorting algorithms like Merge Sort or Insertion Sort could be more efficient. Additionally, using a data type with larger capacity, such as long long int, could prevent overflow issues when converting times to minutes. Optimizing data storage and retrieval with more advanced data structures could also improve overall performance and efficiency.

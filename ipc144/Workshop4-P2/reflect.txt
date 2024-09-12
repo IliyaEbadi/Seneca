@@ -1,0 +1,14 @@
+1. Comparing the use of the `while` construct and the `do/while` construct in getting and evaluating the user’s input:
+
+The `while` construct checks the condition before the loop body is executed. This means that if the condition is false initially, the loop body may never execute. It's useful when you want to ensure that certain conditions are met before running the loop.
+
+The `do/while` construct, on the other hand, checks the condition after the loop body has been executed. This guarantees that the loop body will execute at least once, regardless of the condition. This is particularly useful when you need to run the loop body at least once, such as when prompting the user for input and validating it.
+
+2. Example where using the `if/else if` alternative path construct is more efficient than the `if` optional path:
+
+Using `if/else if` is more efficient when you have multiple conditions to check that are mutually exclusive. Once a condition is found to be true, the rest of the conditions are not evaluated, which saves processing time. This construct ensures that only the relevant block of code runs and stops further checking once a match is found, making the program more efficient.
+
+
+3. Importance of Code Formatting:
+
+Proper code formatting is crucial because it makes the code more readable and easier to understand for anyone who might read it, including your future self. Good formatting includes consistent indentation, clear and descriptive comments, and logical grouping of code sections. This helps in identifying the structure of the code quickly, understanding the flow of the program, and maintaining the code in the future. Properly formatted code reduces errors and enhances collaboration, as others can understand and work with your code more effectively.

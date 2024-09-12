@@ -1,0 +1,31 @@
+1. Parallel Arrays
+Parallel arrays are arrays that are arranged to store related data in corresponding positions across multiple arrays. In my code, I used parallel arrays to store the item costs, priorities, and financing options. This approach makes it easy to manage and process related data together. For example, the cost of an item, its priority, and whether it has financing options are all stored at the same index across different arrays. This way, I can easily access and manipulate data related to each item as a single unit.
+
+ 2. Iteration Construct
+The most convenient iteration construct to use with arrays is the `for` loop. Here’s an example from my code where I used a `for` loop to print item details:
+
+for (i = 0; i < numItems; ++i) {
+    printf("%3d  %5d    %5c    %11.2lf\n", i + 1, itemPriorities[i], itemFinanced[i], itemCosts[i]);
+
+
+Rewriting it with a `while` loop:
+
+i = 0;
+while (i < numItems) {
+    printf("%3d  %5d    %5c    %11.2lf\n", i + 1, itemPriorities[i], itemFinanced[i], itemCosts[i]);
+    i++;
+}
+
+
+Rewriting it with a `do-while` loop:
+
+i = 0;
+do {
+    printf("%3d  %5d    %5c    %11.2lf\n", i + 1, itemPriorities[i], itemFinanced[i], itemCosts[i]);
+    i++;
+} while (i < numItems);
+
+I found that the `for` loop is more concise and easier to read, but the `while` and `do-while` loops can achieve the same result with slightly more code.
+
+3. Testing and Debugging
+To test and debug my program, I compiled the code with warnings enabled to catch syntax errors. I tested the program with different inputs, including valid and invalid values, to ensure it handled errors correctly. I used `printf` statements to print variable values and debug the logic. When necessary, I used a debugger to step through the code and inspect variable values. This process helped me identify and fix both syntax and logic errors in my code.

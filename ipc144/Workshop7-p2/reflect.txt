@@ -1,0 +1,86 @@
+1. Impact of Not Using Structures
+Structure Definitions from the Code
+
+struct PlayerInfo {
+    int lives;
+    char symbol;
+    int num_treasures;
+    int history[Max_pathlength];
+};
+
+struct GameInfo {
+    int path_length;
+    int moves;
+    int bombs[Max_pathlength];
+    int treasures[Max_pathlength];
+};
+Variable Declaration Section with Structures
+
+
+struct PlayerInfo player;
+struct GameInfo game;
+Revised Variable Declaration Section without Structures
+
+
+int player_lives;
+char player_symbol;
+int player_num_treasures;
+int player_history[Max_pathlength];
+
+int game_path_length;
+int game_moves;
+int game_bombs[Max_pathlength];
+int game_treasures[Max_pathlength];
+Impact Explanation
+Using structures significantly simplifies the code by grouping related data together. Without structures, we need to manage more individual variables, which can make the code harder to read and maintain. Structures also make it easier to pass related data to functions and ensure data consistency.
+
+2. Parallel Arrays
+Identification of Parallel Arrays
+In the given code, the parallel arrays are:
+
+player.history and game.bombs
+player.history and game.treasures
+Explanation of the Relationship
+The player.history array keeps track of the player's moves on the path. Each index in player.history corresponds to a specific position on the path, where:
+
+game.bombs array indicates if there's a bomb at that position.
+game.treasures array indicates if there's a treasure at that position.
+This relationship allows the program to determine if a move results in finding a bomb or treasure based on the player's position and update the player's state accordingly.
+
+3. Deepest Nested Statement
+Line Number and Statement
+Let's find the deepest nested statement in the provided code. The deepest nested statement appears to be within the game loop and move validation:
+
+
+
+if (player.history[Next_Move - 1] == 1) {
+    printf("\n===============> Dope! You've been here before!\n");
+} else {
+    player.history[Next_Move - 1] = 1;
+    game.moves--;
+    if (game.bombs[Next_Move - 1] == 1 && game.treasures[Next_Move - 1] == 1) {
+        player.lives--;
+        player.num_treasures++;
+        printf("\n===============> [&] !!! BOOOOOM !!! [&]");
+        printf("\n===============> [&] $$$ Life Insurance Payout!!! [&]\n");
+    } else if (game.bombs[Next_Move - 1] == 1) {
+        player.lives--;
+        printf("\n===============> [%c] !!! BOOOOOM !!! [%c]\n", bomb, bomb);
+    } else if (game.treasures[Next_Move - 1] == 1) {
+        player.num_treasures++;
+        printf("\n===============> [%c] $$$ Found Treasure! $$$ [%c]\n", treasure, treasure);
+    } else {
+        printf("\n===============> [%c] ...Nothing found here... [%c]\n", neither, neither);
+    }
+}
+Explanation
+Checking Move History:
+The code first checks if the player has already moved to this position using player.history[Next_Move - 1].
+Updating History and Moves:
+If it's a new move, the player's history for that position is updated, and the number of moves is decremented.
+Bomb and Treasure Check:
+It checks if both a bomb and treasure are present at the new position and updates the player's lives and treasure count accordingly.
+If only a bomb is present, it decreases the player's lives.
+If only a treasure is present, it increases the player's treasure count.
+If neither is present, it prints a message indicating that nothing was found.
+The logic ensures that the player's state is updated based on their move and the presence of bombs or treasures at that position.

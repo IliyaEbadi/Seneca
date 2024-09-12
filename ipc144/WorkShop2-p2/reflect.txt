@@ -1,0 +1,18 @@
+1.
+a)
+
+1- a = 4
+2- a = 3
+
+b) in the first one increases "a" before printing, in the second one a++ is used within printf, so the original value of a is printed and then a is increase 
+
+2.The issue with price1 is due to the limited precision of floating-point numbers. Floating-point numbers cannot always represent decimal values accurately. In this case, 10.11 cannot be represented exactly, leading to a small error when multiplied by 100. The other samples work because the values can be represented accurately within the limited precision of floating-point numbers.
+
+3.
+1. The output is $0.00 when dividing an integer by an integer, implicitly cast to a double for formatting.
+2. $20 is the output as integer division results in 20.
+3. $20.31 is displayed after explicitly casting the integer to a double before division.
+4. The output is $687194767 due to potential data type issues causing the display of a large unexpected number.
+
+
+
